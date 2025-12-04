@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #e9edf7;
+  min-height: 100vh;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background: #111827;
+  color: #fff;
+  padding: 32px 24px;
+}
+
+.sidebar h2 {
+  font-size: 26px;
+  margin-bottom: 32px;
+}
+
+.nav a {
+  display: block;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+/* Main Area */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: #2f80ed;
+  padding: 32px 16px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.content {
+  flex: 1;
+  padding: 24px 40px 40px;
+}
+
+.dashboard-grid {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* Top Stat Cards */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.1);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.stat-card {
+  border-top: 6px solid #2f80ed;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Other cards */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.cards-row .card {
+  justify-content: flex-start;
+  font-size: 17px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .stats-row,
+  .cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 0;
+  }
+
+  .nav {
+    display: flex;
+    gap: 16px;
+  }
+
+  .content {
+    padding: 24px 16px 32px;
+  }
+
+  .stats-row,
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+}
